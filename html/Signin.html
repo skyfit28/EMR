@@ -1,59 +1,61 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <title>Create Account Form</title>
-  <link rel="stylesheet" href="sign in style.css">
+  <link rel="stylesheet" href="../css/signInStyle.css">
 </head>
 
 <body>
-    <div class="bg"> 
-        <video autoplay muted loop id="myVideo">
-            <source src="../assets/BGVideo.mp4" type="video/mp4">
-        </video>
+  <div class="bg">
+    <video autoplay muted loop id="myVideo">
+      <source src="../assets/BGVideo.mp4" type="video/mp4">
+    </video>
+  </div>
+
+  <div class="container">
+
+    <div class="myform">
+      <div class="main">
+        <img src="../assets/mainLogo.png">
+      </div>
+
+
+      <form id="create-account-form" onsubmit="return false;">
+        <h2>SIGN IN</h2>
+        <input type="text" placeholder="full-name" name="full-name" required>
+        <input type="email" placeholder="email" name="email" required>
+        <input type="password" placeholder="password" name="password" required>
+        <input type="password" placeholder="confirm-password" name="confirm-password" required>
+
+        <div class="btn">
+          <button type="submit" onclick="createAccount()">Create Account</button>
+        </div>
+      </form>
+
+      <p id="result"></p>
+      <script src="../js/scriptSignin.js"></script>
+
     </div>
+    <div class="slider">
+      <img src="../assets/image1.png">
+      <img src="../assets/image2.png">
+      <img src="../assets/image3.png">
+    </div>
+    <script>
+      const images = document.querySelectorAll('.slider img');
+      let index = 0;
 
-    <div class="container">
+      function slide() {
+        images[index].classList.remove('active');
+        index = (index + 1) % images.length;
+        images[index].classList.add('active');
+      }
 
-        <div class="myform">
-            <div class="main">
-                <img src="../assets/main logo.png">
-            </div>
-
-
-            <form id="create-account-form" onsubmit="return false;">
-                <h2>SIGN IN</h2>
-                <input type="text" placeholder="full-name" name="full-name" required>
-                <input type="email" placeholder="email" name="email" required>
-                <input type="password" placeholder="password" name="password" required>
-                <input type="password" placeholder="confirm-password" name="confirm-password" required>
-                
-                <div class="btn">
-                <button type="submit" onclick="createAccount()">Create Account</button>
-                </div>
-            </form>
-
-  <p id="result"></p>
-  <script src="script signin.js"></script>
+      setInterval(slide, 3000);
+    </script>
 
   </div>
-  <div class="slider">
-    <img src="../assets/image3.png">
-    <img src="../assets/image2.png">
-    <img src="../assets/image1.png">
-</div>
-<script>
-    const images = document.querySelectorAll('.slider img');
-    let index = 0;
-
-    function slide() {
-      images[index].classList.remove('active');
-      index = (index + 1) % images.length;
-      images[index].classList.add('active');
-    }
-
-    setInterval(slide, 3000);
-  </script>
-
-    </div>
 </body>
+
 </html>
